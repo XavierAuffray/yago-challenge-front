@@ -66,7 +66,7 @@ async function main() {
 
 async function getQuoteByIpOrToken(token, ip) {
   try {
-    const response = await fetch(`http://localhost:3000/api/quotes?token=${token}&ip_address=${ip}`, {
+    const response = await fetch(`http://34.107.29.191:80/api/quotes?token=${token}&ip_address=${ip}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ async function handleSubmitProfessionInfo(event) {
 
 async function getAdvices(profession) {
   try {
-    const response = await fetch(`http://localhost:3000/api/advices?profession=${profession}`, {
+    const response = await fetch(`http://34.107.29.191:80/api/advices?profession=${profession}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ async function handleSubmitAddressInfo(event) {
   
   async function sendQuoteRequest(data) {
     try {
-      const response = await fetch('http://localhost:3000/api/quotes', {
+      const response = await fetch('http://34.107.29.191:80/api/quotes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -227,7 +227,7 @@ function newQuote() {
   document.getElementById('content').innerHTML = content;
   document.getElementById('FormProfession').addEventListener('submit', handleSubmitProfessionInfo);
   if (token) {
-    fetch(`http://localhost:3000/api/quotes/archive?token=${token}`, {
+    fetch(`http://34.107.29.191:80/api/quotes/archive?token=${token}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -235,7 +235,7 @@ function newQuote() {
       }
     });
   } else if (ip) {
-    fetch(`http://localhost:3000/api/quotes/archive?ip_address=${ip}`, {
+    fetch(`http://34.107.29.191:80/api/quotes/archive?ip_address=${ip}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
