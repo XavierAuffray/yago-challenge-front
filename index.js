@@ -32,12 +32,12 @@ if (queryParams.has('token')) {
 
 async function getUserIp() {
   try {
-    const response = await fetch('http://ip-api.com/json/');
+    const response = await fetch('https://ipapi.co/json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     } else {
       const data = await response.json();
-      return data.query;
+      return data.ip;
     }
   } catch (error) {
     console.log('There has been a problem with your fetch operation: ', error.message);
