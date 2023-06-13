@@ -67,11 +67,11 @@ async function main() {
 
 async function getQuoteByIpOrToken(token, ip) {
   try {
-    const response = await fetch(`https://34.107.29.191:80/api/quotes?token=${token}&ip_address=${ip}`, {
+    const response = await fetch(`http://34.107.29.191:80/api/quotes?token=${token}&ip_address=${ip}`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Origin': window.location.origin
+        'Content-Type': 'application/json'//,
+        // 'Origin': window.location.origin
       }
     });
     if (!response.ok) {
