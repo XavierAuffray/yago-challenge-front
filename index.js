@@ -10,6 +10,8 @@ let quoteReturned = null;
 let quoteAndAdvice = null;
 const queryParams = new URLSearchParams(window.location.search);
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 if (queryParams.has('token')) {
   token = queryParams.get('token');
 }
